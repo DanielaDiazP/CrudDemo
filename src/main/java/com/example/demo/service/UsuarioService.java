@@ -22,7 +22,7 @@ public class UsuarioService {
 				return usuarioRepository.crearUsuario(new Usuario(nombre, Integer.parseInt(edad)));
 			}
 		} catch(Exception e) {
-			return "La edad debe ser un número entero";
+			return "La edad debe ser obligatoria y un número entero";
 		}
 	}
 
