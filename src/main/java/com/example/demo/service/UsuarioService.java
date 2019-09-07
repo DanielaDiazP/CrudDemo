@@ -16,13 +16,13 @@ public class UsuarioService {
 
 	public String crearUsuario(String nombre, String edad) {
 		try {
-			return usuarioRepository.crearUsuario(new Usuario(nombre, Integer.parseInt(edad)));
-		} catch(Exception e) {
 			if(edad.equals("") || nombre.equals("")) {
 				return "Debe ingresar los datos completos";
 			} else {
-				return "La edad debe ser un número entero";
+				return usuarioRepository.crearUsuario(new Usuario(nombre, Integer.parseInt(edad)));
 			}
+		} catch(Exception e) {
+			return "La edad debe ser un número entero";
 		}
 	}
 
